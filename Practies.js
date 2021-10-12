@@ -1,33 +1,19 @@
-const addMobile=document.getElementById('addMobile')
-addMobile.addEventListener('click', function(){
-    const mobileNumber=document.getElementById('mobile-Number').value;
-    const total=parseFloat(mobileNumber);
-    const addMobile=total+1;
-    document.getElementById('mobile-Number').value=addMobile;
-    const totalPtices=addMobile*1219;
-    document.getElementById('cash-total').innerText='$'+totalPtices;
+const mobileAdd=document.getElementById('addMobile')
+mobileAdd.addEventListener('click', function(){
+    const mobileInput=document.getElementById('mobile-Number');
+    const mobileNumber=parseFloat(mobileInput.value);
+    const totalMobile=mobileNumber+1;
+    mobileInput.value=totalMobile;
+    const totalPrice=totalMobile*1219;
+    document.getElementById('total-tk').innerText=totalPrice;
 })
 
-const minusMobile=document.getElementById('minus-mobile')
-minusMobile.addEventListener('click', function(){
-    // const mobileNumber=document.getElementById('mobile-Number').value;
-    // const total=parseFloat(mobileNumber);
-    // const addMobile=total-1;
-    // document.getElementById('mobile-Number').value=addMobile;
-    // const totalPtices=addMobile*1219;
-    // document.getElementById('cash-total').innerText=totalPtices;
-// })
-
-function mobilePricesUpdated(pricesMinusPlush){
-    const mobileNumber=document.getElementById('mobile-Number').value;
-    const total=parseFloat(mobileNumber);
-    if(pricesMinusPlush==true){
-        addMobile=total+1;
-    }
-    if(pricesMinusPlush==false && addMobile>0 ){
-        addMobile=total-1;      
-    }
-    document.getElementById('mobile-Number').value=addMobile;
-    const totalPtices=addMobile*1219;
-    document.getElementById('cash-total').innerText=totalPtices;
-}
+const mobileMinu=document.getElementById('minusMobile')
+mobileMinu.addEventListener('click', function(){
+    const mobileInput=document.getElementById('mobile-Number');
+    const mobileNumber=parseFloat(mobileInput.value);
+    const totalMobile=mobileNumber-1;
+    mobileInput.value=totalMobile;
+    const totalPrice=totalMobile*1219;
+    document.getElementById('total-tk').innerText=totalPrice;
+})
